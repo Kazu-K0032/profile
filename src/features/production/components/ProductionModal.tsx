@@ -270,13 +270,12 @@ export default function ProductionModal({
     >
       <div
         className={cn(
-          "mx-4 w-full max-w-6xl overflow-hidden rounded-2xl bg-white shadow-2xl",
+          "flex h-5/6 w-11/12 flex-col overflow-hidden rounded-2xl bg-white shadow-2xl",
           "dark:bg-neutral-900",
           "transition-all duration-300 ease-out",
           visible
             ? "translate-y-0 scale-100 opacity-100"
-            : "translate-y-4 scale-95 opacity-0",
-          "h-[80vh] max-h-[80vh]"
+            : "translate-y-4 scale-95 opacity-0"
         )}
         onClick={(e) => e.stopPropagation()}
       >
@@ -311,13 +310,13 @@ export default function ProductionModal({
             <span className="hidden md:inline">閉じる</span>
           </button>
         </div>
-        <div className="flex h-[calc(80vh-88px)] flex-col gap-4 px-4 pb-6 md:grid md:grid-cols-2 md:gap-8 md:overflow-hidden md:px-8">
+        <div className="flex min-h-0 flex-1 flex-col px-4 pb-6 md:grid md:h-[calc(80vh-75px)] md:grid-cols-2 md:gap-8 md:overflow-hidden md:px-8">
           <div className="flex shrink-0 items-center justify-center md:h-full">
-            <div className="w-full max-w-[500px] md:max-w-none">{leftSlot}</div>
+            <div className="w-full max-w-[350px] md:max-w-none">{leftSlot}</div>
           </div>
-          <div className="relative flex flex-1 flex-col md:border-l md:border-gray-200 md:pl-8 dark:md:border-neutral-800">
-            <div className="scrollbar-custom flex-1 overflow-y-auto pr-2 md:flex md:flex-col md:overflow-hidden">
-              <div className="max-h-[calc(40vh-80px)] overflow-x-hidden overflow-y-auto md:max-h-[calc(70vh-120px)] md:min-h-0 md:flex-1 md:pr-2">
+          <div className="relative flex min-h-0 flex-1 flex-col pt-2 md:border-l md:border-gray-200 md:pt-0 md:pl-8 dark:md:border-neutral-800">
+            <div className="scrollbar-custom flex min-h-0 flex-1 flex-col overflow-y-auto md:overflow-hidden">
+              <div className="scrollbar-custom min-h-0 flex-1 overflow-x-hidden md:max-h-[calc(70vh-120px)] md:flex-1 md:overflow-y-auto">
                 {pageIndex === 0 || pages.length === 0 ? (
                   rightSlot
                 ) : currentPage ? (
@@ -332,7 +331,7 @@ export default function ProductionModal({
                 ) : null}
               </div>
             </div>
-            <div className="shrink-0 py-3 md:sticky md:bottom-0 md:z-10 md:backdrop-blur dark:md:border-neutral-800 dark:md:bg-neutral-900/80">
+            <div className="shrink-0 pt-2 md:sticky md:bottom-0 md:z-10 md:backdrop-blur dark:md:border-neutral-800 dark:md:bg-neutral-900/80">
               <div className="flex items-center justify-between gap-3">
                 <button
                   type="button"
