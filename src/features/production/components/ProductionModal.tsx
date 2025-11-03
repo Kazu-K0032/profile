@@ -279,7 +279,7 @@ export default function ProductionModal({
         )}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-8 py-6">
+        <div className="flex items-center justify-between px-4 py-6 md:px-8">
           <h2
             className={cn(
               "text-2xl leading-tight font-extrabold md:text-3xl",
