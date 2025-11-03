@@ -18,7 +18,7 @@ export const headerStyles = {
  */
 export const navigationStyles = {
   nav: "flex items-center justify-center",
-  list: "flex list-none gap-x-5 text-center text-2xl",
+  list: "flex list-none gap-x-5 text-center text-xl md:text-3xl",
   button: {
     base: "relative select-none px-3 py-1 transition-all duration-200 cursor-pointer min-h-[2.5rem] flex items-center justify-center font-medium",
     active: cn(
@@ -37,7 +37,7 @@ export const navigationStyles = {
  */
 export const portfolioTitleStyles = {
   title: cn(
-    "c-bg-header absolute top-2 flex max-w-full select-none items-center justify-center break-words px-4 py-2 text-center text-3xl font-bold md:px-0 md:text-4xl",
+    "c-bg-header absolute top-2 flex max-w-full select-none items-center justify-center break-words px-4 py-2 text-center text-2xl md:text-3xl font-bold md:px-0",
     "text-black dark:text-white"
   ),
 } as const;
