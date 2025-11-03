@@ -38,21 +38,19 @@ export default function Production() {
           title={selectedItem.title}
           pages={selectedItem.modal?.pages}
           leftSlot={
-            <div>
-              <Image
-                src={
-                  selectedItem.modal?.images?.[0] ||
-                  selectedItem.thumbnailUrl ||
-                  ""
-                }
-                alt={selectedItem.title}
-                width={1200}
-                height={800}
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="h-auto w-full rounded-xl border border-gray-200/70 shadow-sm dark:border-neutral-800/70"
-                priority={false}
-              />
-            </div>
+            <Image
+              src={
+                selectedItem.modal?.images?.[0] ||
+                selectedItem.thumbnailUrl ||
+                ""
+              }
+              alt={selectedItem.title}
+              width={1200}
+              height={800}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="h-auto w-full rounded-xl border border-gray-200/70 shadow-sm dark:border-neutral-800/70"
+              priority={false}
+            />
           }
           rightSlot={
             <div>
