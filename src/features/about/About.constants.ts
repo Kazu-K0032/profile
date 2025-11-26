@@ -10,7 +10,7 @@ import {
 export const PROFILE_INFO: ProfileInfo = {
   name: "Kazu",
   description:
-    "想像したものを形にするのが好きで、学生時代はYouTubeにいろいろなジャンルの動画を投稿していました。就職活動のとき、動画編集を仕事にするか悩んでいたのですが、そのとき「プログラマー」という職業を知りました。デジタルなツールを使ってゼロから何かを作る工程が動画編集と似ていると感じ、休学期間を経て、プログラマーとして働くことを決めました。仕事では、1つ1つの業務をスピーディーかつ丁寧にこなせるように心がけながら、エンジニアとして必要なスキルを日々学び続けています。",
+    "想像したものを形にするのが好きで、学生時代はYouTubeに様々なジャンルの動画を投稿していました。就職活動では動画編集を仕事にするか悩んでいたのですが、職業を調べる中で「プログラマー」の仕事を知りました。デジタルなツールを使ってゼロから何かを作る工程が動画編集と似ており、休学期間を経てプログラマーとして働くことを決めました。仕事では1つ1つの業務に責任と専門性を意識しながら、エンジニアとして必要なスキルを日々学び続けています。",
 };
 
 export const QUALIFICATIONS: Qualification[] = [
@@ -63,6 +63,11 @@ export const HOBBIES: Hobby[] = [
     alt: "watching",
   },
   {
+    name: "映画観賞",
+    icon: "/icon/icon_movie.svg",
+    alt: "watching",
+  },
+  {
     name: "友人と遊ぶ",
     icon: "/icon/icon_friend.svg",
     alt: "play",
@@ -81,12 +86,6 @@ export const SKILLS: Skill[] = [
     name: "JavaScript(jQuery)",
     icon: "https://skillicons.dev/icons?i=javascript",
     alt: "JavaScript(jQuery)",
-    category: "professional",
-  },
-  {
-    name: "React",
-    icon: "https://skillicons.dev/icons?i=react",
-    alt: "React",
     category: "professional",
   },
   {
@@ -112,18 +111,6 @@ export const SKILLS: Skill[] = [
     name: "Google Apps Script",
     icon: "https://skillicons.dev/icons?i=javascript",
     alt: "Google Apps Script",
-    category: "professional",
-  },
-  {
-    name: "Python",
-    icon: "https://skillicons.dev/icons?i=python",
-    alt: "Python",
-    category: "professional",
-  },
-  {
-    name: "Go",
-    icon: "https://skillicons.dev/icons?i=go",
-    alt: "Go",
     category: "professional",
   },
   // 実務経験あり - データベース
@@ -177,12 +164,6 @@ export const SKILLS: Skill[] = [
     alt: "Figma",
     category: "professional",
   },
-  {
-    name: "Jira",
-    icon: "https://skillicons.dev/icons?i=jira",
-    alt: "Jira",
-    category: "professional",
-  },
   // プロダクト制作経験あり
   {
     name: "JavaScript(TypeScript, Vue.js, React, Next.js)",
@@ -225,48 +206,48 @@ export const SKILLS: Skill[] = [
 
 export const CAREERS: Career[] = [
   {
-    year: "2025年10月-",
+    year: "2025年6月-現在",
     description:
-      "SNS運用システム新規開発プロジェクトに参画。Next.js、Tailwind CSS、TypeScript、PostgreSQLを使用した要件定義支援・設計補助・Webアプリ開発を担当。Terraform、Google Cloud Platformを活用したインフラ管理も経験。",
+      "SNS運用システム新規開発に携わる。要件定義・設計支援・要件に沿った開発を担当。機能要件の整理、実現性調査、技術選定補助、基本設計書・詳細設計書の作成補助、非機能要件/SLAの整理補助、ER図作成支援、開発ディレクトリ構成の設計、フロントエンド・バックエンド開発、バッチ処理の設定を実施。",
   },
   {
-    year: "2025年6月-2024年11月",
+    year: "2025年3月-2025年6月",
+    description:
+      "自社企業サイトのリニューアル制作。Next.jsを中心とした自社企業サイトのリニューアル制作。トップ・事業紹介の実装、表示および動作確認を担当。",
+  },
+  {
+    year: "2024年8月-2025年6月",
+    description:
+      "宝飾品ECサイトの改修。WordPressベースのサイトの大幅改修実装。2025年3月末にリリースし保守フェーズに移行。PHP・SCSS・jQueryのコーディング、WordPressプラグインの導入と設定、契約サーバーの管理、VPSを使用したステージング環境の構築、表示および動作確認、バグ等不具合の修正対応、マニュアル等資料の作成、障害対応を実施。",
+  },
+  {
+    year: "2024年7月-2025年6月",
+    description:
+      "総合建設会社のWebサイトの保守・運用。実装済みのWebサイトの保守。実績などの情報の追加、バグ等の修正、マニュアル等資料の作成を担当。",
+  },
+  {
+    year: "2024年6月-2024年11月",
     description:
       "採用集客イベントサイト制作プロジェクト。HTML/CSS、JavaScript、PHP、SCSS、MySQL、WordPressを使用したフロントエンド開発を担当。",
   },
   {
-    year: "2025年6月-2024年8月",
+    year: "2024年6月-2024年7月",
     description:
-      "宝飾品ECサイト改修プロジェクト。HTML/CSS、JavaScript、PHP、SCSS、MySQL、Docker、WordPressを活用したフロントエンド開発とインフラ構築を担当。",
+      "クリニック向けGASを使用した自動化システムの開発。スプレッドシート/GASを使用したメール送信自動化システムの開発。設定したGoogleドライブフォルダにPDFが追加されたとき、設定したアドレス宛に設定したメールを自動送信するシステムを開発。ガントチャートを使用した作業の共有・進捗管理、一連のシステムのGAS開発、業務ヒアリング、要件ヒアリング、話題抽出、シートの変更、顧客へのシステムの説明、動作確認、バグ修正を実施。",
   },
   {
-    year: "2025年6月-2024年7月",
+    year: "2024年4月-2024年5月",
     description:
-      "総合建設会社Webサイトの保守・運用。HTML/CSS、PHP、SCSSを使用したサイト保守とコンテンツ更新を担当。",
+      "自社研修に参加。各種研修（ビジネスマナー、フロントエンド・バックエンド基礎学習、データベース基礎学習、Webアプリケーション基礎知識、Rest APIを用いた開発、Gitを用いた開発、SQLの学習・演習）と開発研修（個人開発演習：都道府県別の総人口推移グラフを表示するSPAの構築、グループ開発演習：複数の技術イベントサイトを統合するアプリの開発）を実施。PMとしてチーム全体のタスク管理およびミーティングにおける司会役を担当。",
   },
   {
-    year: "2024年7月-2024年6月",
+    year: "2023年3月-2024年3月",
     description:
-      "GAS自動化システム開発プロジェクト。Google Apps Script、Google Cloud Platformを使用した業務自動化システムの開発を担当。",
+      "内的先企業の営業サポート業務。GASを使用した業務の効率化を中心に活動。エンドクライアント企業のリストアップ/アタック、エンジニア情報と案件情報の自動マッチングシステムの開発、スクレイピングによる複数の就職サイトから必要情報のピックアップシステムの開発、スプレッドシートのセルの更新による自動通知システム、新規エンジニアへの教育を実施。",
   },
   {
-    year: "2024年5月-2024年4月",
+    year: "2022年8月-2023年3月",
     description:
-      "自社研修に参加。JavaScript、React、Spring Boot、Java、MySQL、Gitを使用したフロントエンド・バックエンド基礎学習と個人・グループ開発演習を実施。",
-  },
-  {
-    year: "2024年4月-2023年3月",
-    description:
-      "営業サポート業務。Google Apps Scriptを活用した業務効率化システムの開発と運用を担当。",
-  },
-  {
-    year: "2023年3月-2022年8月",
-    description:
-      "GeekSalonの「WebExpertコース」を経て、フロントエンドの基礎知識からアプリの開発までを学びました。そのままメンターとして参画し、プログラミング教育事業の運営メンバーとして働いていました。",
-  },
-  {
-    year: "2022年8月-2022年4月",
-    description:
-      "趣味でYoutubeやnanaなどのプラットフォームに動画や歌を投稿していました。大学では栄養学を学んでいました。",
+      "プログラミングスクールのメンター業務。受講生へのオンライン授業、JavaScriptの基礎からフレームワークを使用した基礎アプリまでの授業の担当、受講生のチーム開発のサポート、受講生獲得のためのデータの作成およびイベントの主催を実施。HTML/CSS、JavaScript、Vue.js、Firebase、API、GitHub、VSCode、チーム開発の基礎を受講生に指導。",
   },
 ];
