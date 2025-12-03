@@ -16,12 +16,12 @@ export const PROFILE_INFO: ProfileInfo = {
 export const QUALIFICATIONS: Qualification[] = [
   {
     name: "PHP8 技術者認定初級試験",
-    icon: "https://skillicons.dev/icons?i=php",
+    icon: "/skills/php.svg",
     alt: "skill_php",
   },
   {
     name: "Python3 エンジニア認定基礎試験",
-    icon: "https://skillicons.dev/icons?i=python",
+    icon: "/skills/python.svg",
     alt: "skill_python",
   },
 ];
@@ -29,7 +29,7 @@ export const QUALIFICATIONS: Qualification[] = [
 export const ACTIVITIES: Activity[] = [
   {
     name: "GitHub",
-    icon: "https://skillicons.dev/icons?i=github",
+    icon: "/icon/icon_github.svg",
     alt: "GitHub",
     url: "https://github.com/Kazu-K0032",
   },
@@ -78,127 +78,127 @@ export const SKILLS: Skill[] = [
   // 実務経験あり - フロントエンド
   {
     name: "HTML/CSS(SCSS)",
-    icon: "https://skillicons.dev/icons?i=html",
+    icon: "/skills/html.svg",
     alt: "HTML/CSS(SCSS)",
     category: "professional",
   },
   {
     name: "JavaScript(jQuery)",
-    icon: "https://skillicons.dev/icons?i=javascript",
+    icon: "/skills/javascript.svg",
     alt: "JavaScript(jQuery)",
     category: "professional",
   },
   {
     name: "Next.js",
-    icon: "https://skillicons.dev/icons?i=nextjs",
+    icon: "/skills/nextjs.svg",
     alt: "Next.js",
     category: "professional",
   },
   {
     name: "Tailwind CSS",
-    icon: "https://skillicons.dev/icons?i=tailwind",
+    icon: "/skills/tailwind.svg",
     alt: "Tailwind CSS",
     category: "professional",
   },
   // 実務経験あり - バックエンド
   {
     name: "PHP(WordPress)",
-    icon: "https://skillicons.dev/icons?i=wordpress",
+    icon: "/skills/wordpress.svg",
     alt: "PHP(WordPress)",
     category: "professional",
   },
   {
     name: "Google Apps Script",
-    icon: "https://skillicons.dev/icons?i=javascript",
+    icon: "/skills/javascript.svg",
     alt: "Google Apps Script",
     category: "professional",
   },
   // 実務経験あり - データベース
   {
     name: "MySQL",
-    icon: "https://skillicons.dev/icons?i=mysql",
+    icon: "/skills/mysql.svg",
     alt: "MySQL",
     category: "professional",
   },
   {
     name: "PostgreSQL",
-    icon: "https://skillicons.dev/icons?i=postgresql",
+    icon: "/skills/postgresql.svg",
     alt: "PostgreSQL",
     category: "professional",
   },
   // 実務経験あり - インフラ・クラウド
   {
     name: "Google Cloud Platform",
-    icon: "https://skillicons.dev/icons?i=gcp",
+    icon: "/skills/gcp.svg",
     alt: "Google Cloud Platform",
     category: "professional",
   },
   {
     name: "Firebase",
-    icon: "https://skillicons.dev/icons?i=firebase",
+    icon: "/skills/firebase.svg",
     alt: "Firebase",
     category: "professional",
   },
   {
     name: "Docker",
-    icon: "https://skillicons.dev/icons?i=docker",
+    icon: "/skills/docker.svg",
     alt: "Docker",
     category: "professional",
   },
   {
     name: "Terraform",
-    icon: "https://skillicons.dev/icons?i=terraform",
+    icon: "/skills/terraform.svg",
     alt: "Terraform",
     category: "professional",
   },
   // 実務経験あり - 開発ツール
   {
     name: "Git/GitHub",
-    icon: "https://skillicons.dev/icons?i=git",
+    icon: "/skills/git.svg",
     alt: "Git/GitHub",
     category: "professional",
   },
   {
     name: "Figma",
-    icon: "https://skillicons.dev/icons?i=figma",
+    icon: "/skills/figma.svg",
     alt: "Figma",
     category: "professional",
   },
   // プロダクト制作経験あり
   {
     name: "JavaScript(TypeScript, Vue.js, React, Next.js)",
-    icon: "https://skillicons.dev/icons?i=javascript",
+    icon: "/skills/javascript.svg",
     alt: "JavaScript(TypeScript, Vue.js, React, Next.js)",
     category: "product",
   },
   {
     name: "Python",
-    icon: "https://skillicons.dev/icons?i=python",
+    icon: "/skills/python.svg",
     alt: "Python",
     category: "product",
   },
   {
     name: "Google Apps Script",
-    icon: "https://skillicons.dev/icons?i=javascript",
+    icon: "/skills/javascript.svg",
     alt: "Google Apps Script",
     category: "product",
   },
   {
     name: "Go",
-    icon: "https://skillicons.dev/icons?i=go",
+    icon: "/skills/go.svg",
     alt: "Go",
     category: "product",
   },
   // 趣味
   {
     name: "Python(Django)",
-    icon: "https://skillicons.dev/icons?i=python",
+    icon: "/skills/python.svg",
     alt: "Python(Django)",
     category: "hobby",
   },
   {
     name: "VBA",
-    icon: "/icon/icon_vba.svg",
+    icon: "/skills/vba.svg",
     alt: "VBA",
     category: "hobby",
   },
