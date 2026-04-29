@@ -53,7 +53,8 @@ export const useNotes = () => {
   useEffect(() => {
     const cachedArticles = getCachedArticles();
     if (cachedArticles) {
-      // localStorage キャッシュからの初期復元（クライアント側マウント時の一度だけ実行）
+      // localStorage キャッシュからの初期復元
+      // SSR では localStorage が無く useState 初期値で扱えないため effect 内で同期
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setArticles(cachedArticles);
       return;
