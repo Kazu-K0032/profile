@@ -56,8 +56,10 @@ export const useTabState = ({
   useEffect(() => {
     const urlTab = searchParams.get("tab") as NavigationTabKey;
 
+    // URLクエリパラメータからタブ状態を同期（外部状態 → React stateの同期）
     if (urlTab && NAVIGATION_TABS.some((tab) => tab.key === urlTab)) {
       // URLパラメータが有効な場合はそれを使用
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentPage(urlTab);
     } else {
       // URLパラメータがない場合はデフォルトタブを使用

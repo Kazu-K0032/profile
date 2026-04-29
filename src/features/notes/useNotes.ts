@@ -53,6 +53,8 @@ export const useNotes = () => {
   useEffect(() => {
     const cachedArticles = getCachedArticles();
     if (cachedArticles) {
+      // localStorage キャッシュからの初期復元（クライアント側マウント時の一度だけ実行）
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setArticles(cachedArticles);
       return;
     }

@@ -11,6 +11,8 @@ export const useAbout = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // next-themes 公式のSSRハイドレーション回避パターン
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
