@@ -27,7 +27,7 @@ export const useNotes = () => {
   // エラー
   const [error, setError] = useState<string | null>(null);
   // ソートオプション
-  const [sortOption, setSortOption] = useState<SortOption>("created_at");
+  const [sortOption, setSortOption] = useState<SortOption>("likes_count");
 
   /**
    * Qiita記事を取得する
