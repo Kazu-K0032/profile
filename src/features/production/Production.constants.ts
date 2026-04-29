@@ -5,60 +5,6 @@ import type { ProductionItem } from "./Production.types";
  */
 export const PRODUCTION_ITEMS: ProductionItem[] = [
   {
-    id: "template-todo-app",
-    title: "テンプレートTodoアプリ",
-    description:
-      "Next.jsを使用した学習・検証を行うためのテンプレートリポジトリ",
-    url: "https://github.com/Kazu-K0032/template-todo-app",
-    publishedAt: "2025/10/17",
-    thumbnailUrl: "/common/template-todo-app.png",
-    tags: [
-      "Next.js",
-      "Antd",
-      "TypeScript",
-      "Tailwind CSS",
-      "Prisma",
-      "PostgreSQL",
-      "Docker",
-    ],
-    features: [
-      "タスク管理機能（追加・編集・削除）",
-      "アカウント管理機能(新規作成・アカウント変更)",
-    ],
-    modal: {
-      images: ["/common/template-todo-app.png"],
-      pages: [
-        {
-          title: "【プロジェクト概要・開発背景】",
-          content: [
-            "## 概要",
-            "本プロジェクトは、Next.jsを使用した学習・検証を行うためのテンプレートリポジトリです。",
-            "データベース（Prisma/PostgreSQL）を使った基本的なTodoアプリを構築しています。",
-            "## 背景",
-            "仕事でアサインされているプロジェクトで使用される技術の知見を深めるため、技術を合わせて構築しました。また個人開発などで技術選定をする機会が多く、その検証環境のためのテンプレートが欲しいと感じたのも1つの背景です。",
-          ],
-        },
-        {
-          title: "【使用技術・ツール】",
-          content: [
-            "### 言語/ツール",
-            "Next.js（App Router）, TypeScript, Tailwind CSS, Prisma（PostgreSQL）、Docker",
-            "### 技術選定",
-            "仕事で使用している技術に合わせるため",
-          ],
-        },
-        {
-          title: "【プロジェクトを通した学び】",
-          content: [
-            "作成前はNext.js、Prismaの知見があまりありませんでしたが、作成を通してこれらの知見を深めることができました。特にNext.jsのコンテキストを使ったグローバルな状態管理の手順を知ることができたのは大きいです。",
-          ],
-        },
-      ],
-      demoUrl: "https://github.com/Kazu-K0032/template-todo-app",
-      repoUrl: "https://github.com/Kazu-K0032/template-todo-app",
-    },
-  },
-  {
     id: "tiktok-api-features",
     title: "TikTok API Features",
     description:
