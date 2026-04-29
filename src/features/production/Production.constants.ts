@@ -9,7 +9,7 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
     title: "TikTok API Features",
     description:
       "TikTok API を使用してユーザープロフィール情報と投稿動画を取得・表示するアプリです。",
-    url: "https://tiktok-api-features.vercel.app/",
+    url: "https://tiktok-api-features-hdklmok6p-kazus-projects-a444d27e.vercel.app/dashboard",
     publishedAt: "2025/08/05",
     thumbnailUrl: "/common/tiktok-api-features.png",
     tags: ["Python", "HTML/CSS", "TikTok API"],
