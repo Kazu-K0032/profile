@@ -86,5 +86,8 @@
   },
 
   /* CSS設定の追加 */
-  "css.validate": false
+  "css.validate": false,
+
+  /* TypeScript Native Previewを有効化 */
+  "js/ts.experimental.useTsgo": true
 }
