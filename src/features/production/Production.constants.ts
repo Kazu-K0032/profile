@@ -44,7 +44,7 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
         {
           title: "【プロジェクトを通した学び】",
           content: [
-            "Tiktok for DevelopersはSandbox環境であっても事前認証さえ完了していればアカウントページに表示される情報はほとんど取得できることを学びました。投稿はプライベートモードでの投稿しかできなかったため、本番環境の申請をしないことにはシステムからのパブリック投稿はできないことも学びました。",
+            "TikTok for DevelopersはSandbox環境であっても事前認証さえ完了していればアカウントページに表示される情報はほとんど取得できることを学びました。投稿はプライベートモードでの投稿しかできなかったため、本番環境の申請をしないことにはシステムからのパブリック投稿はできないことも学びました。",
             "またGitHubで実データに合わせたモックデータを管理せずにデプロイ先で表示させる方法も学ぶことができました。",
           ],
         },
@@ -69,7 +69,7 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
     thumbnailUrl: "/common/go-chat-app.png",
     tags: ["Go", "Firebase", "HTML", "SCSS", "JavaScript"],
     features: [
-      "都道府県別の人口推移グラフ表示",
+      "ユーザー認証（ログイン・サインアップ）",
       "プロフィール（ユーザー名・画像・パスワードなどの変更）",
       "検索機能（登録済みユーザーのフィルタリング）",
       "チャット機能（メッセージの送信・受信）",
@@ -91,9 +91,9 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
           title: "【使用技術・ツール】",
           content: [
             "### 言語/ツール",
-            "Go, HTML/CSS(SCSS), JavaScript, Firebase（Fire store storage）, Cloud RUN（DockerFile）",
+            "Go, HTML/CSS(SCSS), JavaScript, Firebase（Firestore, Cloud Storage）, Cloud Run（Dockerfile）",
             "### 技術選定",
-            "GO言語は未経験であったためフレームワークなどは使用せず、生の状態で進めました。アーキテクチャの選定は、GO言語でよく使用されている構成を調べたところクリーンアーキテクチャがヒットしたため、未経験でしたが学びのため取り入れました。FLOCSSは仕事のプロジェクトでFLOCSSを学ぶ機会があり、個人開発におけるアウトプットがしたいと思い、取り入れました。",
+            "Go言語は未経験であったためフレームワークなどは使用せず、生の状態で進めました。アーキテクチャの選定は、Go言語でよく使用されている構成を調べたところクリーンアーキテクチャがヒットしたため、未経験でしたが学びのため取り入れました。FLOCSSは仕事のプロジェクトでFLOCSSを学ぶ機会があり、個人開発におけるアウトプットがしたいと思い、取り入れました。",
           ],
         },
         {
@@ -107,7 +107,7 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
           title: "【プロジェクトを通した学び】",
           content: [
             "本プロジェクトを通じて、Go言語の基本的な機能を理解することができました。",
-            " 本アプリでは並行処理が使われておらずGo言語ならではの良さを発揮出来てはいませんでしたが、約1ヶ月間で計画していたUdemyの学習と実装したい機能を取り入れたチャットアプリの実現とドメイン付きデプロイサイトの作成を全て行うことができたのは、大きな財産になると思ってます。",
+            " 本アプリでは並行処理が使われておらずGo言語ならではの良さを発揮出来てはいませんでしたが、約1ヶ月間で計画していたUdemyの学習と実装したい機能を取り入れたチャットアプリの実現とドメイン付きデプロイサイトの作成を全て行うことができたのは、大きな財産になると思っています。",
           ],
         },
         {
@@ -261,7 +261,7 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
   },
   {
     id: "administration-table",
-    title: "タスク|アイパス管理",
+    title: "タスク・ID/パスワード管理",
     description: "GoogleスプレッドシートとGASを使った管理表",
     url: "https://docs.google.com/spreadsheets/d/1Xq2VbfydK7L2SKshHiyCtijIy3IGlKcP0Mu20QN_Uyo/",
     publishedAt: "2023/10/01",
@@ -304,13 +304,13 @@ export const PRODUCTION_ITEMS: ProductionItem[] = [
           title: "【開発プロセス・自分の役割】",
           content: [
             "本プロジェクトは、すべての開発工程を一人で担当しました。",
-            "まずGASを使う事は考慮せず、使っていく中で「あったら便利だな」と思う機能を随時追加しました。",
+            "まずは深く設計せず、使っていく中で「あったら便利だな」と思う機能を随時追加しました。",
           ],
         },
         {
           title: "【プロジェクトを通した学び】",
           content: [
-            "自身の生活を支えるアプリはGASで十分に開発できると実感できた",
+            "自身の生活を支えるアプリはGASで十分に開発できると実感できた。",
             "今でもこのスプレッドシートは重宝しています。",
           ],
         },
