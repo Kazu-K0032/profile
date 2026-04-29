@@ -56,16 +56,20 @@ export const useTabState = ({
   useEffect(() => {
     const urlTab = searchParams.get("tab") as NavigationTabKey;
 
+    // URLクエリパラメータからタブ状態を同期（外部状態 → React stateの同期）
+    // ブラウザの戻る/進むなど外部要因の URL 変化にも追従する必要があるため effect で同期
     if (urlTab && NAVIGATION_TABS.some((tab) => tab.key === urlTab)) {
       // URLパラメータが有効な場合はそれを使用
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentPage(urlTab);
     } else {
       // URLパラメータがない場合はデフォルトタブを使用
       setCurrentPage(initialTab);
     }
 
-    setIsInitialized(true);
-  }, [searchParams, initialTab]);
+    // 初期化フラグは1度だけ立てる（命名と挙動の整合性確保）
+    if (!isInitialized) setIsInitialized(true);
+  }, [searchParams, initialTab, isInitialized]);
 
   return {
     currentPage,
