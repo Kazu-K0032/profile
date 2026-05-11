@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { QIITA_ICON_PATH } from "@/constants/qiita.constants";
+import type { QiitaArticle } from "@/schemas/qiita.schemas";
 import { getIconSize } from "@/styles/design.styles";
-import type { QiitaArticle } from "@/types/qiita.types";
 import { cn } from "@/utils/cn.utils";
 import { formatDate } from "@/utils/date.utils";
 import { notesStyles } from "../Notes.styles";

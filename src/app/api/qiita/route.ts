@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { QIITA_API_URL } from "@/constants/qiita.constants";
+import { qiitaArticleListSchema } from "@/schemas/qiita.schemas";
 import { validateEnvironment, getRequiredEnvVariable } from "@/utils/env.utils";
 
 export async function GET() {
@@ -7,9 +9,8 @@ export async function GET() {
     validateEnvironment();
 
     const qiitaToken = getRequiredEnvVariable("QIITA_TOKEN");
-    const baseApiUrl = getRequiredEnvVariable("BASE_API_URL");
 
-    const res = await fetch(baseApiUrl, {
+    const res = await fetch(QIITA_API_URL, {
       headers: {
         Authorization: `Bearer ${qiitaToken}`,
       },
@@ -19,18 +20,18 @@ export async function GET() {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
 
-    const data = await res.json();
+    const raw = await res.json();
+    const parsed = qiitaArticleListSchema.safeParse(raw);
 
-    if (!Array.isArray(data)) {
+    if (!parsed.success) {
+      console.error("Qiita API schema validation error:", parsed.error.issues);
       return NextResponse.json(
         { error: "Qiita APIからの応答が不正です" },
         { status: 500 }
       );
     }
 
-    const qiitaList = data.map((item: Record<string, unknown>) => {
-      return { ...item, site: "Qiita" };
-    });
+    const qiitaList = parsed.data.map((item) => ({ ...item, site: "Qiita" }));
 
     return NextResponse.json(qiitaList);
   } catch (error: unknown) {

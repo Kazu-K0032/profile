@@ -4,7 +4,7 @@ import {
   getCachedArticles,
   cacheArticles,
 } from "@/lib/qiita";
-import type { QiitaArticle } from "@/types/qiita.types";
+import type { QiitaArticle } from "@/schemas/qiita.schemas";
 import { PAGINATION_CONSTANTS } from "./Notes.constants";
 import type { SortOption } from "./Notes.types";
 import {

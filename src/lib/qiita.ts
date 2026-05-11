@@ -1,5 +1,5 @@
 import { STORAGE_KEY } from "@/constants/globals.constants";
-import type { QiitaArticle } from "@/types/qiita.types";
+import type { QiitaArticle } from "@/schemas/qiita.schemas";
 
 const QIITA_ENDPOINT = "/api/qiita";
 
