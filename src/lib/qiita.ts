@@ -19,12 +19,14 @@ export const fetchQiitaArticles = async () => {
     throw new Error(data.error || "記事の取得に失敗しました");
   }
 
-  if (!Array.isArray(data)) {
+  // 内部APIだが中間者改竄や不整合への防御として外部入力扱いでZod検証する
+  const validation = qiitaArticleListSchema.safeParse(data);
+  if (!validation.success) {
     throw new Error("データの形式が不正です");
   }
 
-  // 作成日時を昇順・投稿順でソート
-  const sortedData = data.sort(
+  // 検証対象外のsiteフィールドを保持するため元データをソート対象にする
+  const sortedData = (data as QiitaArticle[]).sort(
     (a, b) =>
       new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
   );
