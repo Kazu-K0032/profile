@@ -1,23 +1,25 @@
 import { NextResponse } from "next/server";
 import { QIITA_API_URL } from "@/constants/qiita.constants";
 import { qiitaArticleListSchema } from "@/schemas/qiita.schemas";
-import { validateEnvironment, getRequiredEnvVariable } from "@/utils/env.utils";
+import { validateEnvironment } from "@/utils/env.utils";
 
 export async function GET() {
   try {
-    // 環境変数の検証
-    validateEnvironment();
-
-    const qiitaToken = getRequiredEnvVariable("QIITA_TOKEN");
+    // 環境変数の検証と取得
+    const env = validateEnvironment();
 
     const res = await fetch(QIITA_API_URL, {
       headers: {
-        Authorization: `Bearer ${qiitaToken}`,
+        Authorization: `Bearer ${env.QIITA_TOKEN}`,
       },
     });
 
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
+      console.error(`Qiita API HTTP error: status=${res.status}`);
+      return NextResponse.json(
+        { error: "Qiita APIの呼び出しに失敗しました" },
+        { status: 502 }
+      );
     }
 
     const raw = await res.json();
@@ -27,7 +29,7 @@ export async function GET() {
       console.error("Qiita API schema validation error:", parsed.error.issues);
       return NextResponse.json(
         { error: "Qiita APIからの応答が不正です" },
-        { status: 500 }
+        { status: 502 }
       );
     }
 
@@ -36,10 +38,8 @@ export async function GET() {
     return NextResponse.json(qiitaList);
   } catch (error: unknown) {
     console.error("Qiita API Error:", error);
-    const message =
-      error instanceof Error ? error.message : "予期せぬエラーが発生しました";
     return NextResponse.json(
-      { error: `Qiita API Error: ${message}` },
+      { error: "Qiita APIの呼び出しに失敗しました" },
       { status: 500 }
     );
   }

@@ -1,6 +1,6 @@
 /**
  * 環境変数ユーティリティ関数
- * QIITA_TOKENの検証のみを行う
+ * 環境変数のスキーマ検証と型安全な取得を行う
  */
 
 import {
@@ -9,26 +9,21 @@ import {
 } from "@/schemas/env.schemas";
 
 /**
- * 必須環境変数の型安全な取得関数
- * @param key 環境変数のキー
- * @returns 環境変数の値（undefinedの場合はエラーを投げる）
+ * 環境変数のスキーマ検証を行い、検証済みの値を返す
+ * 検証失敗時は、内部のZodErrorをそのままthrowするとレスポンスに環境変数名・期待型などの
+ * 詳細が漏出するため、フィールド名のみを含む固定文言のErrorに詰め替えてthrowする
+ * @returns 検証済みの環境変数オブジェクト
+ * @throws {Error} 環境変数の設定に問題がある場合
  */
-export function getRequiredEnvVariable<K extends keyof EnvironmentVariables>(
-  key: K
-): EnvironmentVariables[K] {
-  const value = process.env[key];
-  if (value === undefined) {
-    throw new Error(`Required environment variable ${key} is not set`);
+export function validateEnvironment(): EnvironmentVariables {
+  const result = environmentVariablesSchema.safeParse(process.env);
+  if (!result.success) {
+    const invalidKeys = Array.from(
+      new Set(result.error.issues.map((issue) => issue.path.join(".")))
+    ).join(", ");
+    throw new Error(
+      `Required environment variables are missing or invalid: ${invalidKeys}`
+    );
   }
-  return value as EnvironmentVariables[K];
-}
-
-/**
- * 環境変数の設定をチェックし、問題があればエラーを投げる関数
- * 環境変数のバリデーション失敗はデプロイ設定のバグなので、
- * recoverableな検証ではなく `.parse()` で即時例外を投げる
- * @throws {z.ZodError} 環境変数の設定に問題がある場合
- */
-export function validateEnvironment(): void {
-  environmentVariablesSchema.parse(process.env);
+  return result.data;
 }

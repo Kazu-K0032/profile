@@ -8,8 +8,12 @@ import * as z from "zod";
 export const qiitaArticleSchema = z
   .object({
     id: z.string().describe("Qiita記事のID"),
-    created_at: z.string().describe("ISO 8601形式の作成日時"),
-    url: z.string().describe("Qiita記事のURL"),
+    created_at: z.iso
+      .datetime({ offset: true })
+      .describe("ISO 8601形式の作成日時"),
+    url: z
+      .url({ protocol: /^https?$/ })
+      .describe("Qiita記事のURL（http(s)のみ）"),
     title: z.string().describe("Qiita記事のタイトル"),
     likes_count: z.number().optional().describe("いいね数"),
   })
