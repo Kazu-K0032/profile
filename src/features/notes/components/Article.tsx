@@ -1,17 +1,13 @@
 import Image from "next/image";
 import { QIITA_ICON_PATH } from "@/constants/qiita.constants";
+import type { QiitaArticle } from "@/schemas/qiita.schemas";
 import { getIconSize } from "@/styles/design.styles";
-import type { QiitaArticle } from "@/types/qiita.types";
 import { cn } from "@/utils/cn.utils";
 import { formatDate } from "@/utils/date.utils";
 import { notesStyles } from "../Notes.styles";
 
 interface ArticleProps extends QiitaArticle {
-  created_at: string; // 作成日時
-  url: string; // 記事URL
-  title: string; // 記事タイトル
   site: string; // サイト名
-  likes_count?: number; // いいね数
 }
 
 /**

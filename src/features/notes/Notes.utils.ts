@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import type { QiitaArticle } from "@/types/qiita.types";
+import type { QiitaArticle } from "@/schemas/qiita.schemas";
 import type { SortOption } from "./Notes.types";
 
 /**

@@ -1,44 +1,45 @@
 import { NextResponse } from "next/server";
-import { validateEnvironment, getRequiredEnvVariable } from "@/utils/env.utils";
+import { QIITA_API_URL } from "@/constants/qiita.constants";
+import { qiitaArticleListSchema } from "@/schemas/qiita.schemas";
+import { validateEnvironment } from "@/utils/env.utils";
 
 export async function GET() {
   try {
-    // 環境変数の検証
-    validateEnvironment();
+    // 環境変数の検証と取得
+    const env = validateEnvironment();
 
-    const qiitaToken = getRequiredEnvVariable("QIITA_TOKEN");
-    const baseApiUrl = getRequiredEnvVariable("BASE_API_URL");
-
-    const res = await fetch(baseApiUrl, {
+    const res = await fetch(QIITA_API_URL, {
       headers: {
-        Authorization: `Bearer ${qiitaToken}`,
+        Authorization: `Bearer ${env.QIITA_TOKEN}`,
       },
     });
 
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
-    }
-
-    const data = await res.json();
-
-    if (!Array.isArray(data)) {
+      console.error(`Qiita API HTTP error: status=${res.status}`);
       return NextResponse.json(
-        { error: "Qiita APIからの応答が不正です" },
-        { status: 500 }
+        { error: "Qiita APIの呼び出しに失敗しました" },
+        { status: 502 }
       );
     }
 
-    const qiitaList = data.map((item: Record<string, unknown>) => {
-      return { ...item, site: "Qiita" };
-    });
+    const raw = await res.json();
+    const parsed = qiitaArticleListSchema.safeParse(raw);
+
+    if (!parsed.success) {
+      console.error("Qiita API schema validation error:", parsed.error.issues);
+      return NextResponse.json(
+        { error: "Qiita APIからの応答が不正です" },
+        { status: 502 }
+      );
+    }
+
+    const qiitaList = parsed.data.map((item) => ({ ...item, site: "Qiita" }));
 
     return NextResponse.json(qiitaList);
   } catch (error: unknown) {
     console.error("Qiita API Error:", error);
-    const message =
-      error instanceof Error ? error.message : "予期せぬエラーが発生しました";
     return NextResponse.json(
-      { error: `Qiita API Error: ${message}` },
+      { error: "Qiita APIの呼び出しに失敗しました" },
       { status: 500 }
     );
   }
