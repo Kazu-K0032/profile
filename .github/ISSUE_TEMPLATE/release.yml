@@ -1,0 +1,60 @@
+name: "リリース"
+description: "本番環境へのリリース作業"
+title: "[Release] "
+labels: ["release"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: リリース概要
+      placeholder: 今回のリリースで本番に反映する内容を一文で説明してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: リリース内容
+      description: 本リリースに含まれる PR / Issue へのリンクを列挙してください
+      value: |
+        - #
+    validations:
+      required: true
+
+  - type: textarea
+    id: pre-release-checklist
+    attributes:
+      label: 事前確認
+      description: リリース前に満たしているべき条件を確認してください
+      value: |
+        - [ ] PR の Vercel プレビューで対象の変更の動作確認を行った
+        - [ ] main の必須ジョブ（CI）が green である
+        - [ ] ドキュメントの追従を確認した（`/aidd:docs-sync`）
+    validations:
+      required: true
+
+  - type: textarea
+    id: release-steps
+    attributes:
+      label: リリース手順
+      description: "main へマージすると Vercel が本番へデプロイする"
+      value: |
+        - [ ] PR を main へマージする
+        - [ ] Vercel の本番デプロイが成功したことを確認する
+        - [ ] 本番環境（https://kuji-server.com/）を開き、対象の変更が反映されていることを確認する
+    validations:
+      required: true
+
+  - type: textarea
+    id: rollback
+    attributes:
+      label: ロールバック方針（任意）
+      description: "問題発生時の戻し方を記述してください（例: 対象マージを revert する、Vercel で前のデプロイに戻す）"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 補足
+      description: 参考リンク・関係者への連絡事項等があれば記述してください

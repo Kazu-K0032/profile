@@ -2,40 +2,36 @@
 
 [English](./docs/lang/en.md) | 日本語
 
-個人プロフィールサイト
+個人プロフィールサイト。Next.js・TypeScript・Tailwind CSS v4 で作り、レスポンシブ表示とダークモードに対応している。
 
-## 機能紹介
+README は全ドキュメントへのリンクを集めた入口。内容は各ドキュメントに置き、ここには「どこに何があるか」だけを書く。
 
-- **レスポンシブデザイン**: モバイル・デスクトップ対応
-- **ダークモード**: システム設定に応じた自動切り替え
-- **モダンなUI**: Tailwind CSS v4による最新スタイリング
-- **型安全性**: TypeScriptによる完全な型チェック
+## 各環境のリンク
 
-## 導入手順
+### ローカル
 
-### リポジトリのクローン
+- アプリ: <http://localhost:3000>
 
-```bash
-git clone <repository>
-cd profile
-```
+### 本番
 
-### 依存関係インストール
+| 層       | URL                        | アクセス制限     |
+| -------- | -------------------------- | ---------------- |
+| 公開配信 | <https://kuji-server.com/> | なし（一般公開） |
 
-```bash
-npm install
+## 環境構築
 
-# または
-pnpm install
-```
+[docs/runbook/environment-setup.md](docs/runbook/environment-setup.md) を参照。
 
-### サーバー起動
+## ディレクトリ構成
 
-```bash
-npm run dev
+[CLAUDE.md](CLAUDE.md) を参照。
 
-# または
-pnpm dev
-```
+## 開発支援ツール
 
-ブラウザで `http://localhost:3000` を開いて確認してください。
+- Claude Code のプラグイン: [claude-plugins](https://github.com/Kazu-K0032/claude-plugins)
+- VS Code の推奨拡張機能: [.vscode/extensions.json](.vscode/extensions.json)
+- スペルチェックの設定と除外語: [cspell.json](cspell.json)
+
+## ドキュメント系
+
+ドキュメント全体の案内板は [docs/README.md](docs/README.md)。

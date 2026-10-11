@@ -10,7 +10,8 @@
   "files.autoSaveDelay": 1000, // 自動保存までの待機時間（ミリ秒）
   "files.insertFinalNewline": true, // ファイル末尾に改行を追加(POSIX準拠)
   "files.trimTrailingWhitespace": true, // 行末の空白を自動削除
-  "files.eol": "\n", // 改行コードをLF（\n）に統一
+  "files.eol": "\n", // 改行コードをLF（\n）に統一（.claude/hooks/*.sh が CRLF で壊れないようにする）
+  // スペルチェックの除外語は cSpell.words ではなくリポジトリ直下の cspell.json に置く（CI の cspell は cSpell.words を読まないため）
 
   /* 検索設定 */
   "search.exclude": {

@@ -2,40 +2,36 @@
 
 [日本語](../../README.md) | English
 
-Personal profile website
+Personal profile website, built with Next.js, TypeScript and Tailwind CSS v4. It supports responsive layouts and dark mode.
 
-## Features
+This README is the entry point that links to all documents. The content lives in each document; this page only shows where things are.
 
-- **Responsive Design**: Mobile and desktop support
-- **Dark Mode**: Automatic switching based on system settings
-- **Modern UI**: Latest styling with Tailwind CSS v4
-- **Type Safety**: Complete type checking with TypeScript
+## Environment links
 
-## Installation
+### Local
 
-### Clone the repository
+- App: <http://localhost:3000>
 
-```bash
-git clone <repository>
-cd profile
-```
+### Production
 
-### Install dependencies
+| Layer       | URL                        | Access        |
+| ----------- | -------------------------- | ------------- |
+| Public site | <https://kuji-server.com/> | None (public) |
 
-```bash
-npm install
+## Setup
 
-# or
-pnpm install
-```
+See [docs/runbook/environment-setup.md](../runbook/environment-setup.md) (Japanese).
 
-### Start the server
+## Directory structure
 
-```bash
-npm run dev
+See [CLAUDE.md](../../CLAUDE.md) (Japanese).
 
-# or
-pnpm dev
-```
+## Development tools
 
-Open `http://localhost:3000` in your browser to view the site.
+- Claude Code plugins: [claude-plugins](https://github.com/Kazu-K0032/claude-plugins)
+- Recommended VS Code extensions: [.vscode/extensions.json](../../.vscode/extensions.json)
+- Spell check settings and ignored words: [cspell.json](../../cspell.json)
+
+## Documents
+
+The index of all documents is [docs/README.md](../README.md) (Japanese).
