@@ -123,17 +123,19 @@ export default function ProductionItem({
                 ))}
               </div>
             )}
-            {/* 外部リンクボタン */}
-            <Link
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="btn-primary ml-auto"
-            >
-              アプリを見る
-              <span aria-hidden>»</span>
-            </Link>
+            {/* 外部リンクボタン（URL が無い制作物では出さない） */}
+            {item.url && (
+              <Link
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="btn-primary ml-auto"
+              >
+                アプリを見る
+                <span aria-hidden>»</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>

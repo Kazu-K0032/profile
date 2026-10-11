@@ -327,6 +327,18 @@ export default function ProductionModal({
                       </h2>
                     )}
                     {renderMarkdownLikeContent(currentPage.content)}
+                    {/* 資料の埋め込み（Google スライドなど） */}
+                    {currentPage.embedUrl && (
+                      <div className="aspect-video w-full overflow-hidden rounded-lg border border-gray-200 dark:border-neutral-800">
+                        <iframe
+                          src={currentPage.embedUrl}
+                          title={currentPage.title || title || "埋め込み資料"}
+                          className="h-full w-full"
+                          loading="lazy"
+                          allowFullScreen
+                        />
+                      </div>
+                    )}
                   </div>
                 ) : null}
               </div>

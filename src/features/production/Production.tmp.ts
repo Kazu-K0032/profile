@@ -26,6 +26,7 @@ export const PRODUCTION_ITEM_FORMAT: ProductionItem = {
       {
         title: "",
         content: [""],
+        embedUrl: "",
       },
     ],
   },
