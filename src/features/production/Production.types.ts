@@ -5,7 +5,7 @@ export interface ProductionItem {
   id: string; // ID
   title: string; // タイトル
   description: string; // 説明
-  url: string; // デプロイ先URL
+  url: string; // デプロイ先URL（公開先が無いときは空文字にすると「アプリを見る」ボタンを出さない）
   publishedAt: string; // 作成日・公開日
   thumbnailUrl?: string; // サムネイルURL
   tags?: string[]; // 技術タグ
