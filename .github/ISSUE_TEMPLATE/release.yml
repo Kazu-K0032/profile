@@ -27,7 +27,7 @@ body:
       label: 事前確認
       description: リリース前に満たしているべき条件を確認してください
       value: |
-        - [ ] 検証環境で対象の変更の動作確認を行った
+        - [ ] PR の Vercel プレビューで対象の変更の動作確認を行った
         - [ ] main の必須ジョブ（CI）が green である
         - [ ] ドキュメントの追従を確認した（`/aidd:docs-sync`）
     validations:
@@ -37,11 +37,11 @@ body:
     id: release-steps
     attributes:
       label: リリース手順
-      description: "手順の詳細・公開後の確認観点はリポジトリの手順書（docs/runbook/）を参照する（SSOT）"
+      description: "main へマージすると Vercel が本番へデプロイする"
       value: |
-        - [ ] リリース用ブランチへマージして push する
-        - [ ] デプロイワークフローの成功を確認する
-        - [ ] 本番環境の疎通確認を行う
+        - [ ] PR を main へマージする
+        - [ ] Vercel の本番デプロイが成功したことを確認する
+        - [ ] 本番環境（https://kuji-server.com/）を開き、対象の変更が反映されていることを確認する
     validations:
       required: true
 
@@ -49,7 +49,7 @@ body:
     id: rollback
     attributes:
       label: ロールバック方針（任意）
-      description: "問題発生時の戻し方を記述してください（例: 対象マージを revert して再デプロイする）"
+      description: "問題発生時の戻し方を記述してください（例: 対象マージを revert する、Vercel で前のデプロイに戻す）"
     validations:
       required: false
 

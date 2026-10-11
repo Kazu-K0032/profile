@@ -54,7 +54,6 @@ body:
       description: 直ったとみなす条件。必要に応じて足し引きしてください
       value: |
         - [ ] 再現手順を行っても、期待する動きになる
-        - [ ] 再発を防ぐテストを足した
     validations:
       required: true
 
