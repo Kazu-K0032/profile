@@ -3,6 +3,10 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
-    "typescriptteam.native-preview"
+    "typescriptteam.native-preview",
+    "davidanson.vscode-markdownlint",
+    "streetsidesoftware.code-spell-checker",
+    "github.vscode-github-actions",
+    "redhat.vscode-yaml"
   ]
 }
