@@ -10,7 +10,7 @@ import {
 export const PROFILE_INFO: ProfileInfo = {
   name: "Kazu",
   description:
-    "想像したものを形にするのが好きで、学生時代はYouTubeに様々なジャンルの動画を投稿していました。就職活動では動画編集を仕事にするか悩んでいたのですが、職業を調べる中で「プログラマー」の仕事を知りました。デジタルなツールを使ってゼロから何かを作る工程が動画編集と似ており、休学期間を経てプログラマーとして働くことを決めました。仕事では1つ1つの業務に責任と専門性を意識しながら、エンジニアとして必要なスキルを日々学び続けています。",
+    "想像したものを形にするのが好きで、学生時代はYouTubeに様々なジャンルの動画を投稿していました。就職活動では動画編集を仕事にするか悩んでいたのですが、職業を調べる中で「プログラマー」の仕事を知りました。デジタルなツールを使ってゼロから何かを作る工程が動画編集と似ており、休学期間を経てプログラマーとして働くことを決めました。仕事では1つ1つの業務に責任と専門性を意識しながら、エンジニアとして必要なスキルを日々学び続けています。直近ではClaude Codeを活用したAI駆動開発を実務に取り入れ、設計から実装までを担当しています。今後は特定の領域にとらわれないフルスタックエンジニアとして、最新技術を取り入れながらプロダクトの成長に貢献していきたいと考えています。",
 };
 
 export const QUALIFICATIONS: Qualification[] = [
@@ -89,6 +89,12 @@ export const SKILLS: Skill[] = [
     category: "professional",
   },
   {
+    name: "TypeScript",
+    icon: "/skills/typescript.svg",
+    alt: "TypeScript",
+    category: "professional",
+  },
+  {
     name: "Next.js",
     icon: "/skills/nextjs.svg",
     alt: "Next.js",
@@ -113,6 +119,12 @@ export const SKILLS: Skill[] = [
     alt: "Google Apps Script",
     category: "professional",
   },
+  {
+    name: "Prisma",
+    icon: "/skills/prisma.svg",
+    alt: "Prisma",
+    category: "professional",
+  },
   // 実務経験あり - データベース
   {
     name: "MySQL",
@@ -127,6 +139,12 @@ export const SKILLS: Skill[] = [
     category: "professional",
   },
   // 実務経験あり - インフラ・クラウド
+  {
+    name: "AWS",
+    icon: "/skills/aws.svg",
+    alt: "AWS",
+    category: "professional",
+  },
   {
     name: "Google Cloud Platform",
     icon: "/skills/gcp.svg",
@@ -151,6 +169,12 @@ export const SKILLS: Skill[] = [
     alt: "Terraform",
     category: "professional",
   },
+  {
+    name: "Linux",
+    icon: "/skills/linux.svg",
+    alt: "Linux",
+    category: "professional",
+  },
   // 実務経験あり - 開発ツール
   {
     name: "Git/GitHub",
@@ -162,6 +186,12 @@ export const SKILLS: Skill[] = [
     name: "Figma",
     icon: "/skills/figma.svg",
     alt: "Figma",
+    category: "professional",
+  },
+  {
+    name: "Claude Code",
+    icon: "/skills/claude.svg",
+    alt: "Claude Code",
     category: "professional",
   },
   // プロダクト制作経験あり
@@ -206,34 +236,29 @@ export const SKILLS: Skill[] = [
 
 export const CAREERS: Career[] = [
   {
-    year: "2025年6月-現在",
+    year: "2026年8月-現在",
+    description:
+      "社内向け技術ブログシステムの開発と、AI開発基盤の全社横断整備に向けた検証に参画。Claude Code等を用いた実装フローの検証と技術ガイドラインの策定、実装検証の結果や最新のAI技術トレンドのチーム内共有を担当。",
+  },
+  {
+    year: "2026年6月-2026年7月",
+    description:
+      "商品紹介サイトの新規構築支援。基本設計からインフラ構築までを単独で担当。要件に基づくアーキテクチャ設計とAWS・Terraformによるインフラ構築、技術選定（ライブラリ・テスト戦略・開発フロー）、デザインに基づくUI実装とWordPressへの組み込み、リリースおよびリリース後の保守・運用を実施。",
+  },
+  {
+    year: "2025年12月-2026年5月",
+    description:
+      "技術記事投稿サイトの開発プロジェクトにおける、Claude Codeを活用したAI駆動開発の導入検証と開発基盤の整備。開発フロー（Issue作成〜実装プラン策定〜実装〜PR作成〜レビュー）へのAIの組み込み、プロンプト・権限・静的解析ツールとの連携整備、外部認証機能の技術調査と実装レビュー、最新AIニュースの共有と新規AIツールの検証を実施。",
+  },
+  {
+    year: "2025年6月-2025年12月",
     description:
       "SNS運用システム新規開発に携わる。要件定義・設計支援・要件に沿った開発を担当。機能要件の整理、実現性調査、技術選定補助、基本設計書・詳細設計書の作成補助、非機能要件/SLAの整理補助、ER図作成支援、開発ディレクトリ構成の設計、フロントエンド・バックエンド開発、バッチ処理の設定を実施。",
   },
   {
-    year: "2025年3月-2025年6月",
+    year: "2024年6月-2025年6月",
     description:
-      "自社企業サイトのリニューアル制作。Next.jsを用い、トップページ・事業紹介ページの実装、表示・動作確認を担当。",
-  },
-  {
-    year: "2024年8月-2025年6月",
-    description:
-      "宝飾品ECサイトの改修。WordPressベースのサイトの大幅改修実装。2025年3月末にリリースし保守フェーズに移行。PHP・SCSS・jQueryのコーディング、WordPressプラグインの導入と設定、契約サーバーの管理、VPSを使用したステージング環境の構築、表示および動作確認、バグ等不具合の修正対応、マニュアル等資料の作成、障害対応を実施。",
-  },
-  {
-    year: "2024年7月-2025年6月",
-    description:
-      "総合建設会社のWebサイトの保守・運用。実績情報の追加、バグ修正、マニュアル等資料の作成を担当。",
-  },
-  {
-    year: "2024年6月-2024年11月",
-    description:
-      "採用集客イベントサイト制作プロジェクト。HTML/CSS(SCSS)、JavaScriptを用いたフロントエンド開発を担当(プロジェクト全体ではPHP・MySQL・WordPressも使用)。",
-  },
-  {
-    year: "2024年6月-2024年7月",
-    description:
-      "クリニック向けGAS自動化システムの開発。指定のGoogleドライブフォルダにPDFが追加された際に、設定済みのアドレスへ事前定義したメールを自動送信するシステムをスプレッドシート+GASで構築。要件ヒアリング、課題抽出、GAS開発、ガントチャートによる進捗管理、顧客へのシステム説明、動作確認、バグ修正を実施。",
+      "自社の複数案件で、Webサイト・システムの制作・開発・保守を担当。企業サイトのNext.jsによるリニューアル、WordPressを用いたイベントサイトの制作と宝飾品ECサイトの全面改修（VPSでのステージング環境構築・GitHub Actionsによるデプロイ連携を含む）、総合建設会社のWebサイトの保守・運用、スプレッドシートとGASによるメール送信の自動化システムの開発を実施。",
   },
   {
     year: "2024年4月-2024年5月",

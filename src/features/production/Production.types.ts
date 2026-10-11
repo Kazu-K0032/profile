@@ -5,7 +5,7 @@ export interface ProductionItem {
   id: string; // ID
   title: string; // タイトル
   description: string; // 説明
-  url: string; // デプロイ先URL
+  url: string; // デプロイ先URL（公開先が無いときは空文字にすると「アプリを見る」ボタンを出さない）
   publishedAt: string; // 作成日・公開日
   thumbnailUrl?: string; // サムネイルURL
   tags?: string[]; // 技術タグ
@@ -34,8 +34,10 @@ export interface ProductionModalContent {
 /**
  * 2ページ目以降に表示するページ: Markdown型
  * - content に Markdown（リンク/箇条書き/見出しに対応）
+ * - embedUrl を指定すると、本文の下に資料（Google スライドなど）を埋め込んで表示
  */
 export interface ProductionMarkdownPage {
   title: string;
   content: string[];
+  embedUrl?: string; // 埋め込む資料のURL（Google スライドなら /embed の URL）
 }
