@@ -18,6 +18,7 @@
 | [2026-10-11](2026-10-11-ai-rules-location.md)         | ai-rules-location: AI 向けの規約は .claude/rules と CLAUDE.md に置き、claude-plugins の init-repo を土台にする | 承認済み |
 | [2026-10-11](2026-10-11-production-material-embed.md) | production-material-embed: 制作物の資料はモーダルのページに iframe で埋め込む                                  | 承認済み |
 | [2026-10-11](2026-10-11-skill-icons.md)               | skill-icons: スキルのアイコンは skill-icons の形にそろえる                                                     | 承認済み |
+| [2026-10-11](2026-10-11-career-granularity.md)        | career-granularity: About の経歴は同じ時期の短期案件を 1 項目にまとめる                                        | 承認済み |
 
 ## 書き方
 
