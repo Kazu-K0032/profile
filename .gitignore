@@ -11,13 +11,16 @@ next-env.d.ts
 # ログファイル
 *.log
 
-# 環境設定ファイル
+# 環境設定ファイル（雛形の env.example はコミットする）
+.env
 .env.*
 .env.local
 .env.production
 .env.development
 .env.staging
 .env.test
+!.env.example
+!.env.*.example
 
 # 機密情報を含むファイル
 *.key
@@ -32,15 +35,23 @@ secrets/
 # Husky
 .husky/_
 
-# tmp
+# Claude Code の作業ファイル（コミット文の下書き・スキルの出力先）
+tmp.md
 tmp.*
 tmp/
 temp.*
 temp/
 
-# lockfile
-pnpm-lock.yaml
+# lockfile（pnpm 以外のものを除外する。pnpm-lock.yaml はコミットする）
 package-lock.json
 yarn.lock
 bun.lockb
 bun.lock
+
+# 個人用の Claude Code 設定（共有するのは .claude/settings.json と CLAUDE.md）
+.claude/settings.local.json
+CLAUDE.local.md
+
+# OS が作るファイル
+.DS_Store
+Thumbs.db
